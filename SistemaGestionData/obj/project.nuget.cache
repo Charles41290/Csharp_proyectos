@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qyTLC71V3F1rWKTjxGBjr9FlEspduQQDdcqttMpeHJS7s7yG8fIXRIZCdei8WLFcHu1sGCZ2mHiBxtQHTrG0Mw==",
+  "dgSpecHash": "MoOkRzMrNwpBjIDzbBWLUjlmPnG17YYa2ntx6w7Dd+j8GhtXeUtfkpEQg/v+FAvYT9zo0Wa8/px1UDfFjt4VEg==",
   "success": true,
-  "projectFilePath": "C:\\C#\\proyectos\\CursoCsharp\\WebAPISistemaGestion\\SistemaGestionData\\SistemaGestionData.csproj",
+  "projectFilePath": "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\SistemaGestionData\\SistemaGestionData.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\RomeroRodriguezCarlo\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\RomeroRodriguezCarlo\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

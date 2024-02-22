@@ -1,3 +1,5 @@
+using SistemaGestionBussines;
+
 namespace WebAPISistemaGestion
 {
     public class Program
@@ -12,6 +14,7 @@ namespace WebAPISistemaGestion
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddScoped<ProductoBussines2>();
 
             var app = builder.Build();
 

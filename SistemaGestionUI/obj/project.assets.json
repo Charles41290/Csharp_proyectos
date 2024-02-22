@@ -529,11 +529,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\C#\\proyectos\\CursoCsharp\\WebAPISistemaGestion\\SistemaGestionUI\\SistemaGestionUI.csproj",
+      "projectUniqueName": "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\SistemaGestionUI\\SistemaGestionUI.csproj",
       "projectName": "SistemaGestionUI",
-      "projectPath": "C:\\C#\\proyectos\\CursoCsharp\\WebAPISistemaGestion\\SistemaGestionUI\\SistemaGestionUI.csproj",
+      "projectPath": "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\SistemaGestionUI\\SistemaGestionUI.csproj",
       "packagesPath": "C:\\Users\\RomeroRodriguezCarlo\\.nuget\\packages\\",
-      "outputPath": "C:\\C#\\proyectos\\CursoCsharp\\WebAPISistemaGestion\\SistemaGestionUI\\obj\\",
+      "outputPath": "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\SistemaGestionUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\RomeroRodriguezCarlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -550,11 +550,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\C#\\proyectos\\CursoCsharp\\WebAPISistemaGestion\\SistemaGestionBussines\\SistemaGestionBussines.csproj": {
-              "projectPath": "C:\\C#\\proyectos\\CursoCsharp\\WebAPISistemaGestion\\SistemaGestionBussines\\SistemaGestionBussines.csproj"
+            "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\SistemaGestionBussines\\SistemaGestionBussines.csproj": {
+              "projectPath": "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\SistemaGestionBussines\\SistemaGestionBussines.csproj"
             },
-            "C:\\C#\\proyectos\\CursoCsharp\\WebAPISistemaGestion\\SistemaGestionEntities\\SistemaGestionEntities.csproj": {
-              "projectPath": "C:\\C#\\proyectos\\CursoCsharp\\WebAPISistemaGestion\\SistemaGestionEntities\\SistemaGestionEntities.csproj"
+            "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\SistemaGestionEntities\\SistemaGestionEntities.csproj": {
+              "projectPath": "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\SistemaGestionEntities\\SistemaGestionEntities.csproj"
             }
           }
         }

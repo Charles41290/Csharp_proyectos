@@ -13,3 +13,4 @@ C:\C#\proyectos\CursoCsharp\WebAPISistemaGestion\SistemaGestionData\obj\Debug\ne
 C:\C#\proyectos\CursoCsharp\WebAPISistemaGestion\SistemaGestionData\obj\Debug\net6.0\refint\SistemaGestionData.dll
 C:\C#\proyectos\CursoCsharp\WebAPISistemaGestion\SistemaGestionData\obj\Debug\net6.0\SistemaGestionData.pdb
 C:\C#\proyectos\CursoCsharp\WebAPISistemaGestion\SistemaGestionData\obj\Debug\net6.0\ref\SistemaGestionData.dll
+C:\C#\proyectos\CursoCsharp\WebApiSistemaGestion\SistemaGestionData\obj\Debug\net6.0\SistemaGestionData.sourcelink.json

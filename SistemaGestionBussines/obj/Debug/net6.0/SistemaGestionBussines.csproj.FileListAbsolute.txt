@@ -15,3 +15,4 @@ C:\C#\proyectos\CursoCsharp\WebAPISistemaGestion\SistemaGestionBussines\obj\Debu
 C:\C#\proyectos\CursoCsharp\WebAPISistemaGestion\SistemaGestionBussines\obj\Debug\net6.0\refint\SistemaGestionBussines.dll
 C:\C#\proyectos\CursoCsharp\WebAPISistemaGestion\SistemaGestionBussines\obj\Debug\net6.0\SistemaGestionBussines.pdb
 C:\C#\proyectos\CursoCsharp\WebAPISistemaGestion\SistemaGestionBussines\obj\Debug\net6.0\ref\SistemaGestionBussines.dll
+C:\C#\proyectos\CursoCsharp\WebApiSistemaGestion\SistemaGestionBussines\obj\Debug\net6.0\SistemaGestionBussines.sourcelink.json

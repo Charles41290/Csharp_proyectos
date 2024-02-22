@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\C#\\proyectos\\CursoCsharp\\WebAPISistemaGestion\\SistemaGestionEntities\\SistemaGestionEntities.csproj": {}
+    "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\SistemaGestionEntities\\SistemaGestionEntities.csproj": {}
   },
   "projects": {
-    "C:\\C#\\proyectos\\CursoCsharp\\WebAPISistemaGestion\\SistemaGestionEntities\\SistemaGestionEntities.csproj": {
+    "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\SistemaGestionEntities\\SistemaGestionEntities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\C#\\proyectos\\CursoCsharp\\WebAPISistemaGestion\\SistemaGestionEntities\\SistemaGestionEntities.csproj",
+        "projectUniqueName": "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\SistemaGestionEntities\\SistemaGestionEntities.csproj",
         "projectName": "SistemaGestionEntities",
-        "projectPath": "C:\\C#\\proyectos\\CursoCsharp\\WebAPISistemaGestion\\SistemaGestionEntities\\SistemaGestionEntities.csproj",
+        "projectPath": "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\SistemaGestionEntities\\SistemaGestionEntities.csproj",
         "packagesPath": "C:\\Users\\RomeroRodriguezCarlo\\.nuget\\packages\\",
-        "outputPath": "C:\\C#\\proyectos\\CursoCsharp\\WebAPISistemaGestion\\SistemaGestionEntities\\obj\\",
+        "outputPath": "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\SistemaGestionEntities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\RomeroRodriguezCarlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
