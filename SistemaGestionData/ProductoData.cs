@@ -10,14 +10,15 @@ namespace SistemaGestionData
 {
     public class ProductoData
     {
-        private static string connectionString = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;";
+        //private static string connectionString = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;";
+        private static string connectionString = @"Server=localhost\SQLEXPRESS;Database=proyecto_csharp;Trusted_Connection=True;";
         private static List<Producto> productos = new List<Producto>();
 
         public static List<Producto> ListarProductos()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM Productos";
+                string query = "SELECT * FROM Producto";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 using (SqlDataReader reader = comando.ExecuteReader())
@@ -27,12 +28,17 @@ namespace SistemaGestionData
                         while (reader.Read())
                         {
                             int idObtenido = Convert.ToInt32(reader["id"]);
-                            string descripcion = reader.GetString(0);
-                            double costo = reader.GetFloat(1);
-                            double precioVenta = reader.GetFloat(2);
-                            //string categoria = reader.GetString(3);
-                            short stock = reader.GetInt16(4);
-                            int idUsuario = reader.GetInt32(6);
+                            //string descripcion = reader.GetString(0);
+                            //double costo = reader.GetFloat(1);
+                            //double precioVenta = reader.GetFloat(2);
+                            ////string categoria = reader.GetString(3);
+                            //short stock = reader.GetInt16(4);
+                            //int idUsuario = reader.GetInt32(6);
+                            string descripcion = reader.GetString(1);
+                            decimal costo = reader.GetDecimal(2);
+                            decimal precioVenta = reader.GetDecimal(3);
+                            int stock = reader.GetInt32(4);
+                            int idUsuario = reader.GetInt32(5);
 
                             Producto productoObtenido = new Producto(idObtenido, descripcion, costo, precioVenta, stock, idUsuario);
 
@@ -49,7 +55,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM Productos WHERE Id = @id";
+                string query = "SELECT * FROM Producto WHERE Id = @id";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("id", id);
@@ -58,12 +64,11 @@ namespace SistemaGestionData
                 if (reader.Read())
                 {
                     int idObtenido = Convert.ToInt32(reader["id"]);
-                    string descripcion = reader.GetString(0);
-                    double costo = reader.GetFloat(1);
-                    double precioVenta = reader.GetFloat(2);
-                    //string categoria = reader.GetString(3);
-                    short stock = reader.GetInt16(4);
-                    int idUsuario = reader.GetInt32(6);
+                    string descripcion = reader.GetString(1);
+                    decimal costo = reader.GetDecimal(2);
+                    decimal precioVenta = reader.GetDecimal(3);
+                    int stock = reader.GetInt32(4);
+                    int idUsuario = reader.GetInt32(5);
 
                     Producto productoObtenido = new Producto(idObtenido, descripcion, costo, precioVenta, stock, idUsuario);
 
@@ -78,7 +83,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO Productos (Descripcion, Costo, PrecioVenta, Stock, IdUsuario) VALUES(@descripcion, @costo, @precioVenta, @stock, @idUsuario) ";
+                string query = "INSERT INTO Producto (Descripcion, Costo, PrecioVenta, Stock, IdUsuario) VALUES(@descripcion, @costo, @precioVenta, @stock, @idUsuario) ";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("descripcion", producto.Descripcion);
@@ -95,7 +100,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "DELETE FROM Productos WHERE Id = @id";
+                string query = "DELETE FROM Producto WHERE Id = @id";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("id", id);
@@ -107,7 +112,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "UPDATE Productos SET Descripcion = @descripcion, Costo = @costo, PrecioVenta = @precioVenta, Stock = @stock, IdUsuario = @idUsuario WHERE id = @id";
+                string query = "UPDATE Producto SET Descripcion = @descripcion, Costo = @costo, PrecioVenta = @precioVenta, Stock = @stock, IdUsuario = @idUsuario WHERE id = @id";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("id", id);

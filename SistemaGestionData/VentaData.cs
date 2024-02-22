@@ -10,14 +10,15 @@ namespace SistemaGestionData
 {
     public class VentaData
     {
-        private static string connectionString = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;";
+        //private static string connectionString = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;";
+        private static string connectionString = @"Server=localhost\SQLEXPRESS;Database=proyecto_csharp;Trusted_Connection=True;";
         private static List<Venta> ventas = new List<Venta>();
 
         public static List<Venta> ListarVentas()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM Ventas";
+                string query = "SELECT * FROM Venta";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 using (SqlDataReader reader = comando.ExecuteReader())
@@ -43,7 +44,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM Ventas WHERE Id = @id";
+                string query = "SELECT * FROM Venta WHERE Id = @id";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("Id", id);
@@ -64,7 +65,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO Ventas (Comentarios, IdUsuario) VALUES(@comentarios, @idUsuario) ";
+                string query = "INSERT INTO Venta (Comentarios, IdUsuario) VALUES(@comentarios, @idUsuario) ";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("comentarios", venta.Comentarios);
@@ -78,7 +79,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "DELETE FROM Ventas WHERE Id = @id";
+                string query = "DELETE FROM Venta WHERE Id = @id";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("id", id);
@@ -90,7 +91,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "UPDATE Ventas SET Comentarios = @comentarios, IdUsuario = @idUsuario WHERE Id = @id";
+                string query = "UPDATE Venta SET Comentarios = @comentarios, IdUsuario = @idUsuario WHERE Id = @id";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("id", id);

@@ -10,27 +10,29 @@ namespace SistemaGestionBussines
 {
     public class UsuarioBussines
     {
-        public static List<Usuario> GetAllUsers()
+
+        // anteriormente todos los siguientes métodos eran estáticos
+        public List<Usuario> GetAllUsers()
         {
             return UsuarioData.ListarUsuarios();
         }
 
-        public static Usuario GetUserById(int id)
+        public Usuario GetUserById(int id)
         {
             return UsuarioData.ObtenerUsuarioPorId(id);
         }
 
-        public static bool CreateUser(Usuario usuario)
+        public bool CreateUser(Usuario usuario)
         {
             return UsuarioData.AgregarUsuario(usuario);
         }
 
-        public static bool DeleteUserById(int id)
+        public bool DeleteUserById(int id)
         {
             return UsuarioData.BorrarUsuarioPorId(id);
         }
 
-        public static bool UpdateUserById(int id, Usuario usuario)
+        public bool UpdateUserById(int id, Usuario usuario)
         {
             return UsuarioData.ActualizarUsuarioPorId(id, usuario);
         }

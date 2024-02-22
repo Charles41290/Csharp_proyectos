@@ -14,7 +14,8 @@ namespace WebAPISistemaGestion
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddScoped<ProductoBussines2>();
+            builder.Services.AddScoped<ProductoBussines>();
+            builder.Services.AddScoped<UsuarioBussines>();
 
             var app = builder.Build();
 

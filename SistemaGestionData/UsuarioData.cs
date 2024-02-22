@@ -10,14 +10,14 @@ namespace SistemaGestionData
 {
     public class UsuarioData
     {
-        private static string connectionString = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;";
+        private static string connectionString = @"Server=localhost\SQLEXPRESS;Database=proyecto_csharp;Trusted_Connection=True;";
         private static List<Usuario> usuarios = new List<Usuario>();
 
         public static List<Usuario> ListarUsuarios()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM Usuarios";
+                string query = "SELECT * FROM Usuario";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 using (SqlDataReader reader = comando.ExecuteReader())
@@ -27,9 +27,9 @@ namespace SistemaGestionData
                         while (reader.Read())
                         {
                             int idObtenido = Convert.ToInt32(reader["id"]);
-                            string nombre = reader.GetString(0);
-                            string apellido = reader.GetString(1);
-                            string nombreUsuario = reader.GetString(2);
+                            string nombre = reader.GetString(1); // el orden del indice depende de como fueron definidos los campos en la tabla
+                            string apellido = reader.GetString(2);
+                            string nombreUsuario = reader.GetString(3);
                             string password = reader.GetString(3);
                             string mail = reader.GetString(4);
 
@@ -48,7 +48,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM Usuarios WHERE Id = @id";
+                string query = "SELECT * FROM Usuario WHERE Id = @id";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("id", id);
@@ -57,9 +57,9 @@ namespace SistemaGestionData
                 if (reader.Read())
                 {
                     int idObtenido = Convert.ToInt32(reader["id"]);
-                    string nombre = reader.GetString(0);
-                    string apellido = reader.GetString(1);
-                    string nombreUsuario = reader.GetString(2);
+                    string nombre = reader.GetString(1);
+                    string apellido = reader.GetString(2);
+                    string nombreUsuario = reader.GetString(3);
                     string password = reader.GetString(3);
                     string mail = reader.GetString(4);
 
@@ -74,7 +74,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO Usuarios (Nombre, Apellido, NombreUsuario, Contrasenia, Mail) VALUES (@nombre, @apellido, @nombreUsuario, @contrasenia, @mail)";
+                string query = "INSERT INTO Usuario (Nombre, Apellido, NombreUsuario, Contrasenia, Mail) VALUES (@nombre, @apellido, @nombreUsuario, @contrasenia, @mail)";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("nombre", usuario.Nombre);
@@ -90,7 +90,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "DELETE FROM Usuarios WHERE Id = @id";
+                string query = "DELETE FROM Usuario WHERE Id = @id";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("id", id);
@@ -102,7 +102,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "UPDATE Usuarios SET Nombre = @nombre, Apellido = @apellido, NombreUsuario = @nombreUsuario, Contrasenia = @contrasenia, Mail = @mail WHERE Id = @id ";
+                string query = "UPDATE Usuario SET Nombre = @nombre, Apellido = @apellido, NombreUsuario = @nombreUsuario, Contrasenia = @contrasenia, Mail = @mail WHERE Id = @id ";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("id", id);

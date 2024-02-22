@@ -10,14 +10,14 @@ namespace SistemaGestionData
 {
     public class ProductoVendidoData
     {
-        private static string connectionString = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;";
+        private static string connectionString = @"Server=localhost\SQLEXPRESS;Database=proyecto_csharp;Trusted_Connection=True;";
         private static List<ProductoVendido> productosVendidos = new List<ProductoVendido>();
 
         public static List<ProductoVendido> ListarProductosVendidos()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM ProductosVendidos";
+                string query = "SELECT * FROM ProductoVendido";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 using (SqlDataReader reader = comando.ExecuteReader())
@@ -45,7 +45,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM ProductosVendidos WHERE Id = @id";
+                string query = "SELECT * FROM ProductoVendido WHERE Id = @id";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("Id", id);
@@ -67,7 +67,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO ProductosVendidos(Stock, IdProducto, IdVenta) VALUES(@stock, @idProducto, @idVenta) ";
+                string query = "INSERT INTO ProductoVendido(Stock, IdProducto, IdVenta) VALUES(@stock, @idProducto, @idVenta) ";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("stock", productoVendido.Stock);
@@ -81,7 +81,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "DELETE FROM ProductosVendidos WHERE Id = @id";
+                string query = "DELETE FROM ProductoVendido WHERE Id = @id";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("id", id);
@@ -93,7 +93,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "UPDATE ProductosVendidos SET Stock = @stock, IdProducto = @idProducto, IdVenta = @idVenta WHERE Id = @id";
+                string query = "UPDATE ProductoVendido SET Stock = @stock, IdProducto = @idProducto, IdVenta = @idVenta WHERE Id = @id";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("id", id);

@@ -8,29 +8,29 @@ using SistemaGestionData;
 
 namespace SistemaGestionBussines
 {
-    public static class ProductoBussines
+    public  class ProductoBussines
     {
-        public static List<Producto> GetAllProductos()
+        public  List<Producto> GetAllProductos()
         {
             return ProductoData.ListarProductos();
         }
 
-        public static Producto GetProductById(int id)
+        public  Producto GetProductById(int id)
         {
             return ProductoData.ObtenerProductoPorId(id);
         }
 
-        public static bool CreateProduct(Producto producto)
+        public  bool CreateProduct(Producto producto)
         {
             return ProductoData.AgregarProducto(producto);
         }
 
-        public static bool DeleteProductById(int id) 
+        public  bool DeleteProductById(int id) 
         {
             return ProductoData.BorrarUsuarioPorId(id);
         }
 
-        public static bool UpdateProductById(int id, Producto producto)
+        public  bool UpdateProductById(int id, Producto producto)
         {
             return ProductoData.ActualizaProductoPorId(id, producto);
         }

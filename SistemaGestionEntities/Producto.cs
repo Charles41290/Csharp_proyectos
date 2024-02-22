@@ -11,8 +11,8 @@ namespace SistemaGestionEntities
         // Atributos
         private long id;
         private string descripcion;
-        private double costo;
-        private double precioVenta;
+        private decimal costo;
+        private decimal precioVenta;
         private int stock;
         private long idUsuario;
 
@@ -41,7 +41,7 @@ namespace SistemaGestionEntities
             }
         }
 
-        public double Costo
+        public decimal Costo
         {
             get
             {
@@ -54,7 +54,7 @@ namespace SistemaGestionEntities
 
         }
 
-        public double PrecioVenta
+        public decimal PrecioVenta
         {
             get
             {
@@ -99,7 +99,7 @@ namespace SistemaGestionEntities
 
         }
 
-        public Producto(string descripcion, double costo, double precioVenta, int stock, long idUsuario)
+        public Producto(string descripcion, decimal costo, decimal precioVenta, int stock, long idUsuario)
         {
             this.descripcion = descripcion;
             this.costo = costo;
@@ -108,7 +108,7 @@ namespace SistemaGestionEntities
             this.idUsuario = idUsuario;
         }
 
-        public Producto(long id, string descripcion, double costo, double precioVenta, int stock, long idUsuario) : this(descripcion, costo, precioVenta, stock, idUsuario)
+        public Producto(long id, string descripcion, decimal costo, decimal precioVenta, int stock, long idUsuario) : this(descripcion, costo, precioVenta, stock, idUsuario)
         {
             this.id = id;
 
