@@ -16,6 +16,8 @@ namespace SistemaGestionEntities
         private int stock;
         private long idUsuario;
 
+
+
         // Getters and Setters
         public long Id
         {

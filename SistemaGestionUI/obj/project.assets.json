@@ -147,10 +147,21 @@
           }
         }
       },
+      "DTOs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/DTOs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DTOs.dll": {}
+        }
+      },
       "SistemaGestionBussines/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "DTOs": "1.0.0",
           "SistemaGestionData": "1.0.0",
           "SistemaGestionEntities": "1.0.0"
         },
@@ -165,6 +176,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "DTOs": "1.0.0",
           "SistemaGestionEntities": "1.0.0",
           "System.Data.SqlClient": "4.8.6"
         },
@@ -500,6 +512,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "DTOs/1.0.0": {
+      "type": "project",
+      "path": "../DTOs/DTOs.csproj",
+      "msbuildProject": "../DTOs/DTOs.csproj"
     },
     "SistemaGestionBussines/1.0.0": {
       "type": "project",

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "WebAPISistemaGestion/1.0.0": {
         "dependencies": {
+          "DTOs": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.26",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.26",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.26",
@@ -556,8 +557,14 @@
           }
         }
       },
+      "DTOs/1.0.0": {
+        "runtime": {
+          "DTOs.dll": {}
+        }
+      },
       "SistemaGestionBussines/1.0.0": {
         "dependencies": {
+          "DTOs": "1.0.0",
           "SistemaGestionData": "1.0.0",
           "SistemaGestionEntities": "1.0.0"
         },
@@ -567,6 +574,7 @@
       },
       "SistemaGestionData/1.0.0": {
         "dependencies": {
+          "DTOs": "1.0.0",
           "SistemaGestionEntities": "1.0.0",
           "System.Data.SqlClient": "4.8.6"
         },
@@ -964,6 +972,11 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "DTOs/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "SistemaGestionBussines/1.0.0": {
       "type": "project",

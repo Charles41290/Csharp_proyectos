@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SistemaGestionBussines;
 using SistemaGestionEntities;
-using System.Data.SqlClient;
+using DTOs;
 
 namespace WebAPISistemaGestion.Controllers
 {
@@ -28,13 +28,13 @@ namespace WebAPISistemaGestion.Controllers
             catch (Exception)
             {
                 // retorno una lista vacía 
-                return new List<Producto>() {};
+                return new List<Producto>() { };
             }
-            
+
         }
 
         [HttpGet("{id}")]
-        public ActionResult<string> obtenerProductoPorId(int id) 
+        public ActionResult<string> obtenerProductoPorId(int id)
         {
             try
             {
@@ -45,6 +45,54 @@ namespace WebAPISistemaGestion.Controllers
 
                 return BadRequest(new { mensaje = "Id no encontrado", status = 404 });
             }
+        }
+
+        [HttpPost]
+        public IActionResult AgregarProducto([FromBody] ProductoDTO producto)
+        {
+            if (this.productoService.CreateProduct(producto))
+            {
+                return base.Ok(new { mensaje = "Producto agregado", producto });
+            }
+            else
+            {
+                return base.Conflict(new { mensaje = "El producto no pudo ser agregado" });
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult BorradProducto(int id)
+        {
+            if (id > 0)
+            {
+                if (this.productoService.DeleteProductById(id))
+                {
+                    return base.Ok(new { mensaje = "Producto eliminado", status = 200 });
+                }
+                else
+                {
+                    return base.Conflict(new { mensaje = "No se pudo eliminar el producto" });
+                }
+            }
+            return base.BadRequest(new { mensaje = "Id inválido", status = 404 });
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult ActualizarProductoPorId(int id, Producto producto) 
+        {
+            if (id > 0)
+            {
+                if (this.productoService.UpdateProductById(id, producto))
+                {
+                    return base.Ok(new { mensaje = "Producto actualizado", status = 200 });
+                }
+                else
+                {
+                    return base.Conflict(new { mensaje = "No se pudo actualizar el producto" });
+                }
+            }
+            return base.BadRequest(new { mensaje = "Id inválido", status = 404 });
+
         }
     }
 }

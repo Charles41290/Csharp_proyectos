@@ -147,10 +147,21 @@
           }
         }
       },
+      "DTOs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/DTOs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DTOs.dll": {}
+        }
+      },
       "SistemaGestionData/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "DTOs": "1.0.0",
           "SistemaGestionEntities": "1.0.0",
           "System.Data.SqlClient": "4.8.6"
         },
@@ -487,6 +498,11 @@
         "version.txt"
       ]
     },
+    "DTOs/1.0.0": {
+      "type": "project",
+      "path": "../DTOs/DTOs.csproj",
+      "msbuildProject": "../DTOs/DTOs.csproj"
+    },
     "SistemaGestionData/1.0.0": {
       "type": "project",
       "path": "../SistemaGestionData/SistemaGestionData.csproj",
@@ -500,6 +516,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "DTOs >= 1.0.0",
       "SistemaGestionData >= 1.0.0",
       "SistemaGestionEntities >= 1.0.0"
     ]
@@ -531,6 +548,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\DTOs\\DTOs.csproj": {
+              "projectPath": "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\DTOs\\DTOs.csproj"
+            },
             "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\SistemaGestionData\\SistemaGestionData.csproj": {
               "projectPath": "C:\\C#\\proyectos\\CursoCsharp\\WebApiSistemaGestion\\SistemaGestionData\\SistemaGestionData.csproj"
             },

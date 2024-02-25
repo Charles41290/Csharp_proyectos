@@ -79,3 +79,5 @@ C:\C#\proyectos\CursoCsharp\WebApiSistemaGestion\WebAPISistemaGestion\bin\Debug\
 C:\C#\proyectos\CursoCsharp\WebApiSistemaGestion\WebAPISistemaGestion\bin\Debug\net6.0\SistemaGestionBussines.pdb
 C:\C#\proyectos\CursoCsharp\WebApiSistemaGestion\WebAPISistemaGestion\bin\Debug\net6.0\SistemaGestionEntities.pdb
 C:\C#\proyectos\CursoCsharp\WebApiSistemaGestion\WebAPISistemaGestion\bin\Debug\net6.0\SistemaGestionData.pdb
+C:\C#\proyectos\CursoCsharp\WebApiSistemaGestion\WebAPISistemaGestion\bin\Debug\net6.0\DTOs.dll
+C:\C#\proyectos\CursoCsharp\WebApiSistemaGestion\WebAPISistemaGestion\bin\Debug\net6.0\DTOs.pdb

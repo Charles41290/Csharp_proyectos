@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SistemaGestionEntities;
 using SistemaGestionData;
+using DTOs;
 
 namespace SistemaGestionBussines
 {
@@ -20,14 +21,20 @@ namespace SistemaGestionBussines
             return ProductoData.ObtenerProductoPorId(id);
         }
 
-        public  bool CreateProduct(Producto producto)
+        public  bool CreateProduct(ProductoDTO producto)
         {
-            return ProductoData.AgregarProducto(producto);
+            // genero un Producto a partir de ProductoDTO y lo utilizo para el metodo de AgregarProducto
+            Producto p = new Producto();
+            p.Descripcion = producto.Descripcion;
+            p.PrecioVenta = producto.PrecioVenta;
+            p.Stock = producto.Stock;
+            p.IdUsuario = producto.IdUsuario;
+            return ProductoData.AgregarProducto(p);
         }
 
-        public  bool DeleteProductById(int id) 
+        public bool DeleteProductById(int id) 
         {
-            return ProductoData.BorrarUsuarioPorId(id);
+            return ProductoData.BorrarProductoPorId(id);
         }
 
         public  bool UpdateProductById(int id, Producto producto)

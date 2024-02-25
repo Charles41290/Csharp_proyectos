@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SistemaGestionEntities;
+using DTOs;
 
 namespace SistemaGestionData
 {
@@ -83,7 +84,7 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO Producto (Descripcion, Costo, PrecioVenta, Stock, IdUsuario) VALUES(@descripcion, @costo, @precioVenta, @stock, @idUsuario) ";
+                string query = "INSERT INTO Producto (Descripciones, Costo, PrecioVenta, Stock, IdUsuario) VALUES(@descripcion, @costo, @precioVenta, @stock, @idUsuario) ";
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("descripcion", producto.Descripcion);
@@ -96,15 +97,38 @@ namespace SistemaGestionData
 
         }
 
-        public static bool BorrarUsuarioPorId(int id)
+        public static bool BorrarProductoPorId(int id)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string query = "DELETE FROM Producto WHERE Id = @id";
+                Producto productoObtenido;
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("id", id);
-                return comando.ExecuteNonQuery() > 0;
+                try
+                {
+                    productoObtenido = ObtenerProductoPorId(id);
+                    if (productoObtenido is not null)
+                    {
+                        return comando.ExecuteNonQuery() > 0;
+                    }
+                    return false;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+
+                //Producto productoObtenido = ObtenerProductoPorId(id);
+                //connection.Open();
+                //SqlCommand comando = new SqlCommand(query, connection);
+                //comando.Parameters.AddWithValue("id", id);
+                //if(productoObtenido is not null)
+                //{
+                //    return comando.ExecuteNonQuery() > 0;
+                //}
+                //return false;
             }
         }
 
@@ -112,7 +136,8 @@ namespace SistemaGestionData
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "UPDATE Producto SET Descripcion = @descripcion, Costo = @costo, PrecioVenta = @precioVenta, Stock = @stock, IdUsuario = @idUsuario WHERE id = @id";
+                string query = "UPDATE Producto SET Descripciones = @descripcion, Costo = @costo, PrecioVenta = @precioVenta, Stock = @stock, IdUsuario = @idUsuario WHERE id = @id";
+                Producto productoObtenido;
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("id", id);
@@ -121,7 +146,22 @@ namespace SistemaGestionData
                 comando.Parameters.AddWithValue("precioVenta", producto.PrecioVenta);
                 comando.Parameters.AddWithValue("stock", producto.Stock);
                 comando.Parameters.AddWithValue("idUsuario", producto.IdUsuario);
-                return comando.ExecuteNonQuery() > 0;
+                try
+                {   
+                    productoObtenido = ObtenerProductoPorId(id);
+                    if (productoObtenido is not null)
+                    {
+                        return comando.ExecuteNonQuery() > 0;
+                    }
+                    return false;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+                //return comando.ExecuteNonQuery() > 0;
+
+                
             }
         }
     }

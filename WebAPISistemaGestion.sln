@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPISistemaGestion", "WebAPISistemaGestion\WebAPISistemaGestion.csproj", "{48EC2C8F-5689-44FF-882D-A36F70E988BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPISistemaGestion", "WebAPISistemaGestion\WebAPISistemaGestion.csproj", "{48EC2C8F-5689-44FF-882D-A36F70E988BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaGestionEntities", "SistemaGestionEntities\SistemaGestionEntities.csproj", "{BF2C4BB9-0FFF-4217-BF3F-60946C79E222}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaGestionEntities", "SistemaGestionEntities\SistemaGestionEntities.csproj", "{BF2C4BB9-0FFF-4217-BF3F-60946C79E222}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaGestionData", "SistemaGestionData\SistemaGestionData.csproj", "{EC38280A-9D7F-48DE-A98F-D9EC87E10C8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaGestionData", "SistemaGestionData\SistemaGestionData.csproj", "{EC38280A-9D7F-48DE-A98F-D9EC87E10C8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaGestionBussines", "SistemaGestionBussines\SistemaGestionBussines.csproj", "{31D68345-3B44-41D5-92C8-34EADAC78172}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaGestionBussines", "SistemaGestionBussines\SistemaGestionBussines.csproj", "{31D68345-3B44-41D5-92C8-34EADAC78172}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaGestionUI", "SistemaGestionUI\SistemaGestionUI.csproj", "{914CC82F-8646-463E-BB7D-34197022DA84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaGestionUI", "SistemaGestionUI\SistemaGestionUI.csproj", "{914CC82F-8646-463E-BB7D-34197022DA84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOs", "DTOs\DTOs.csproj", "{EE029A95-290C-4439-B9CD-05A0BE95BF2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{914CC82F-8646-463E-BB7D-34197022DA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{914CC82F-8646-463E-BB7D-34197022DA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{914CC82F-8646-463E-BB7D-34197022DA84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE029A95-290C-4439-B9CD-05A0BE95BF2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE029A95-290C-4439-B9CD-05A0BE95BF2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE029A95-290C-4439-B9CD-05A0BE95BF2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE029A95-290C-4439-B9CD-05A0BE95BF2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
