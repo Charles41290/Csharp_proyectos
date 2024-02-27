@@ -10,7 +10,7 @@ namespace WebAPISistemaGestion.Controllers
     {
         private UsuarioBussines usuarioService;
 
-        // // el param usuarioService se inyecta como dependencia en Program.cs
+        // el param usuarioService se inyecta como dependencia en Program.cs
         public UsuariosController(UsuarioBussines usuarioService) 
         {
             this.usuarioService = usuarioService;
@@ -44,8 +44,26 @@ namespace WebAPISistemaGestion.Controllers
 
                 return BadRequest(new {mensaje = "Id no encontrado", status = 404});
             }
-           
         }
+
+        [HttpPut("{id}")]
+        public ActionResult<string> ActualizarUsuarioPorId(int id, Usuario usuario)
+        {
+            if (id > 0)
+            {
+                if (this.usuarioService.UpdateUserById(id, usuario))
+                {
+                    return base.Ok(new {mensaje = "Usuario actualizado", status = 200 });
+                }
+                else
+                {
+                    return base.Conflict(new { mensaje = "No se pudo actualizar el usuario" });
+                }
+            }
+            return base.BadRequest(new { mensaje = "Id inválido", status = 404 });
+        }
+
+
     }
 
     

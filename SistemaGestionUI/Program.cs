@@ -28,18 +28,27 @@ namespace SistemaGestionUI
 				//	Console.WriteLine(usuario);
 				//}
 
+				//List<ProductoVendido> productos = ProductoVendidoBussines.GetAllProductsSold();
+				//foreach (var product in productos)
+				//{
+				//	Console.WriteLine(product);
+				//}
+				UsuarioBussines usuarioService = new UsuarioBussines();
 
-				List<ProductoVendido> productos = ProductoVendidoBussines.GetAllProductsSold();
-				foreach (var product in productos)
+				bool actualizado = usuarioService.UpdateUserById(2, new Usuario(2,"Ernesto", "Perez Mod", "userErne","12345","mail@gmail.com"));
+                if (actualizado)
 				{
-					Console.WriteLine(product);
+					Console.WriteLine("actualizacion exitosa");
 				}
-
-			}
+				else
+                {
+					Console.WriteLine("Fallo todo hermano");
+                }
+            }
 			catch (Exception ex)
 			{
-
-				Console.WriteLine(ex.ToString);
+				Console.WriteLine("Salto la excepción");
+				Console.WriteLine(ex);
 			}
         }
     }

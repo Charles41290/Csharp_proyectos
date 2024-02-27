@@ -26,3 +26,6 @@ C:\C#\proyectos\CursoCsharp\WebAPISistemaGestion\SistemaGestionUI\obj\Debug\net6
 C:\C#\proyectos\CursoCsharp\WebAPISistemaGestion\SistemaGestionUI\obj\Debug\net6.0\SistemaGestionUI.pdb
 C:\C#\proyectos\CursoCsharp\WebAPISistemaGestion\SistemaGestionUI\obj\Debug\net6.0\SistemaGestionUI.genruntimeconfig.cache
 C:\C#\proyectos\CursoCsharp\WebAPISistemaGestion\SistemaGestionUI\obj\Debug\net6.0\ref\SistemaGestionUI.dll
+C:\C#\proyectos\CursoCsharp\WebApiSistemaGestion\SistemaGestionUI\bin\Debug\net6.0\DTOs.dll
+C:\C#\proyectos\CursoCsharp\WebApiSistemaGestion\SistemaGestionUI\bin\Debug\net6.0\DTOs.pdb
+C:\C#\proyectos\CursoCsharp\WebApiSistemaGestion\SistemaGestionUI\obj\Debug\net6.0\SistemaGestionUI.sourcelink.json

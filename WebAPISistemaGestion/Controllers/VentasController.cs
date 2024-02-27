@@ -8,6 +8,9 @@ namespace WebAPISistemaGestion.Controllers
     [Route("api/[controller]")]
     public class VentasController : Controller
     {
+        // no es necesario ya qu los metodo de la clase VentasBussines son estáticos
+        // private VentaBussines ventaService;
+
         [HttpGet]
         public List<Venta> ObtenerListadoDeVentas()
         {
@@ -18,7 +21,7 @@ namespace WebAPISistemaGestion.Controllers
             catch (Exception)
             {
                 // retorna una lista vacía en caso ocurra la excepcion del VentaData
-                return new List<Venta>() {};
+                return new List<Venta>() { };
             }
         }
 
@@ -32,7 +35,20 @@ namespace WebAPISistemaGestion.Controllers
             catch (Exception)
             {
 
-                return BadRequest(new {mensaje = "Id no encontrado", status = 404 });
+                return BadRequest(new { mensaje = "Id no encontrado", status = 404 });
+            }
+        }
+
+        [HttpPost]
+        public ActionResult<string> AgregarVenta([FromBody] Venta venta)
+        {
+            if (VentaBussines.CreateSale(venta))
+            {
+                return base.Ok(new { mensaje = "Venta agregada" });
+            }
+            else
+            {
+                return base.Conflict(new { mensaje = "La venta no pudo ser agregada" });
             }
         }
     }

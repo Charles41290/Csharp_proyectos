@@ -103,6 +103,7 @@ namespace SistemaGestionData
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string query = "UPDATE Usuario SET Nombre = @nombre, Apellido = @apellido, NombreUsuario = @nombreUsuario, Contrasenia = @contrasenia, Mail = @mail WHERE Id = @id ";
+                Usuario usuarioObtenido;
                 connection.Open();
                 SqlCommand comando = new SqlCommand(query, connection);
                 comando.Parameters.AddWithValue("id", id);
@@ -112,6 +113,19 @@ namespace SistemaGestionData
                 comando.Parameters.AddWithValue("contrasenia", usuario.Contrasenia);
                 comando.Parameters.AddWithValue("mail", usuario.Mail);
 
+                //try
+                //{
+                //    usuarioObtenido = ObtenerUsuarioPorId(id);
+                //    if (usuarioObtenido is not null)
+                //    {
+                //        return comando.ExecuteNonQuery() > 0;
+                //    }
+                //    return false;
+                //}
+                //catch (Exception)
+                //{
+                //    return false;
+                //}
                 return comando.ExecuteNonQuery() > 0;
             }
 

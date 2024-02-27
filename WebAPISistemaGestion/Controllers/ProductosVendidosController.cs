@@ -18,7 +18,7 @@ namespace WebAPISistemaGestion.Controllers
             catch (Exception)
             {
 
-                return new List<ProductoVendido>() { };
+                return new List<ProductoVendido>() {};
             }
         }
 
